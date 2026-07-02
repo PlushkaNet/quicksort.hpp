@@ -1,3 +1,8 @@
+// SPDX-License-Identifier: MIT
+/*
+ * Copyright (C) 2026 PlushkaNet (github.com/PlushkaNet)
+ */
+
 namespace qs {
     template <typename T>
     void memswap(T *a, T *b) {
