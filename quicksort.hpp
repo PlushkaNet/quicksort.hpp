@@ -1,0 +1,39 @@
+namespace qs {
+    template <typename T>
+    void memswap(T *a, T *b) {
+        T c = *a;
+        *a = *b;
+        *b = c;
+    }
+
+    template <typename T>
+    void quicksort_s(T *arr, int start, int len) {
+        if((len-start) <= 1) return;
+        T pivot = arr[(start+len)/2];
+        int i = start;
+        for(int j = start; j < len; j++) {
+            if(arr[j] < pivot)
+                memswap<T>(&arr[i++], &arr[j]);
+        }
+        quicksort_s<T>(arr, start, i);
+        for(int j = i; j < len; j++) {
+            if(arr[j] == pivot)
+                memswap<T>(&arr[i++], &arr[j]);
+        }
+        quicksort_s<T>(arr, i, len);
+    }
+
+    template <typename T>
+    bool is_sorted(T *arr, int len) {
+        if(len <= 1) return true;
+        for(int i = 1; i < len; i++) {
+            if(arr[i-1] > arr[i]) return false;
+        }
+        return true;
+    }
+
+    template <typename T>
+    void quicksort(T *arr, int len) {
+        quicksort_s<T>(arr, 0, len);
+    }
+}
