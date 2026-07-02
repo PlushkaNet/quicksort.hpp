@@ -1,14 +1,15 @@
 #include <cstdlib>
+#include <functional>
 #include <iostream>
 #include <chrono>
 
 #include "quicksort.hpp"
 
 template <typename T>
-T *generate_large_data(int len) {
+T *generate_large_data(int len, std::function<T(void)> rng) {
     T *arr = new T[len];
     for(int i = 0; i < len; i++) {
-        arr[i] = std::rand();
+        arr[i] = rng();
     }
     return arr;
 }
@@ -24,8 +25,8 @@ bool run_test_only(T *data, int len) {
 }
 
 template <typename T>
-bool run_test(int len) {
-    T *data = generate_large_data<T>(len);
+bool run_test(int len, std::function<T(void)> rng) {
+    T *data = generate_large_data<T>(len, rng);
     std::cout << "data generated\n";
     bool status = run_test_only<T>(data, len);
     delete[] data;
@@ -34,7 +35,18 @@ bool run_test(int len) {
 
 int main() {
     enum {ARR_LENGTH = 10000000};
+
     std::cout << "testing quicksort for 10 million items\n";
-    if(!run_test<int>(ARR_LENGTH)) return 1;
-    std::cout << "test quicksort_i_s passed\n";
+
+    if(!run_test<int>(ARR_LENGTH, rand)) return 1;
+    std::cout << "test quicksort for INT passed\n";
+
+    if(!run_test<int>(ARR_LENGTH, mrand48)) return 1;
+    std::cout << "test quicksort for SIGNED LONG passed\n";
+
+    if(!run_test<int>(ARR_LENGTH, lrand48)) return 1;
+    std::cout << "test quicksort for UNSIGNED LONG passed\n";
+
+    if(!run_test<int>(ARR_LENGTH, drand48)) return 1;
+    std::cout << "test quicksort for DOUBLE passed\n";
 }
