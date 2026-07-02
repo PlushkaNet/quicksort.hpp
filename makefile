@@ -1,4 +1,4 @@
-COMPILE_DEBUG = g++ -g -O0 -Wpedantic -fsanitize=address -fsanitize=undefined
+COMPILE_DEBUG = g++ -g -O0 -Wall -Wextra -Wpedantic -fsanitize=address -fsanitize=undefined
 COMPILE = g++ -O2
 
 run-all: all
