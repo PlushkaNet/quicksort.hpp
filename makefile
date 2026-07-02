@@ -13,10 +13,10 @@ run-all: all
 all: example example-debug tests tests-debug
 
 example:
-	${COMPILE} quicksort_example.cpp -o example
+	${COMPILE} example.cpp -o example
 
 example-debug:
-	${COMPILE_DEBUG} quicksort_example.cpp -o example-debug
+	${COMPILE_DEBUG} example.cpp -o example-debug
 
 tests:
 	${COMPILE} tests.cpp -o tests
