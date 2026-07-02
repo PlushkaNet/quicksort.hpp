@@ -1,9 +1,9 @@
 # quicksort.hpp
 ## One-header library with simple but overwhelmingly fast sorting method
-> **C single header library quicksort.h can be found [here](https://github.com/PlushkaNet/quicksort.h)**
+> **You can look into *quicksort_example.cpp* to see example of usage**
 <br>
 
-> **You can look into quicksort_example.cpp to see example of usage**
+> C single header library quicksort.h can be found **[here](https://github.com/PlushkaNet/quicksort.h)**
 ## Avaliable methods:
 - **`qs::quicksort`**
 - **`qs::is_sorted`**
