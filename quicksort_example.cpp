@@ -14,12 +14,16 @@ void print_arr(T *arr, int len) {
 int main() {
     const int ARR_LEN = 5;
     int arr[ARR_LEN] = {8, 1, 3, 5, 1};
+
     std::cout << "Unsorted array: \n";
     print_arr(arr, ARR_LEN);
-    qs::quicksort(arr, ARR_LEN);
+
+    qs::quicksort(arr, ARR_LEN); // sort array
+
     std::cout << "Sorted array: \n";
     print_arr(arr, ARR_LEN);
-    if(qs::is_sorted(arr, ARR_LEN))
+
+    if(qs::is_sorted(arr, ARR_LEN)) // check that array is sorted
         std::cout << "Array sorted sucessfully";
     else
         std::cout << "Array was not sorted";
