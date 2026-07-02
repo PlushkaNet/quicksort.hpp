@@ -38,6 +38,24 @@ namespace qs {
     }
 
     template <typename T>
+    void reverse(T *arr, int len) {
+        if(len <= 1) return;
+        len--;
+        for(int i = 0; i < (len/2); i++) {
+            memswap(&arr[i], &arr[len-i]);
+        }
+    }
+
+    template <typename T>
+    bool is_sorted_reverse(T *arr, int len) {
+        if(len <= 1) return true;
+        for(int i = len-1; i > 0; i--) {
+            if(arr[i] > arr[i-1]) return false;
+        }
+        return true;
+    }
+
+    template <typename T>
     void quicksort(T *arr, int len) {
         quicksort_s<T>(arr, 0, len);
     }
