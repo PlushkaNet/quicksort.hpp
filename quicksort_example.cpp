@@ -28,4 +28,14 @@ int main() {
     else
         std::cout << "Array was not sorted";
     std::cout << std::endl;
+
+    qs::reverse(arr, ARR_LEN); // reverse array
+    
+    std::cout << "Reversed array: \n";
+    print_arr(arr, ARR_LEN);
+
+    if(qs::is_sorted_reverse(arr, ARR_LEN)) // check if array is sorted and reversed
+        std::cout << "Array is sorted and reversed\n";
+    else
+        std::cout << "Array is not sorted or not reversed\n";
 }
