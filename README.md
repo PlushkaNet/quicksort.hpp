@@ -6,8 +6,10 @@
 > C single header library quicksort.h can be found **[here](https://github.com/PlushkaNet/quicksort.h)**
 ## Avaliable methods:
 - **`qs::quicksort`**
-- **`qs::is_sorted`**
 - **`qs::quicksort_s`**
+- **`qs::is_sorted`**
+- **`qs::reverse`**
+- **`qs::is_sorted_reverse`**
 <br>
 
 This library uses its own namespace `qs::`
