@@ -12,20 +12,20 @@ namespace qs {
     }
 
     template <typename T>
-    void quicksort_s(T *arr, int start, int len) {
-        if((len-start) <= 1) return;
-        T pivot = arr[(start+len)/2];
+    void quicksort_s(T *arr, int start, int end) { // [start, end)
+        if((end-start) <= 1) return;
+        T pivot = arr[(start+end)/2];
         int i = start;
-        for(int j = start; j < len; j++) {
+        for(int j = start; j < end; j++) {
             if(arr[j] < pivot)
                 memswap<T>(&arr[i++], &arr[j]);
         }
         quicksort_s<T>(arr, start, i);
-        for(int j = i; j < len; j++) {
+        for(int j = i; j < end; j++) {
             if(arr[j] == pivot)
                 memswap<T>(&arr[i++], &arr[j]);
         }
-        quicksort_s<T>(arr, i, len);
+        quicksort_s<T>(arr, i, end);
     }
 
     template <typename T>
