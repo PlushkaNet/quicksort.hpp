@@ -40,9 +40,8 @@ namespace qs {
     template <typename T>
     void reverse(T *arr, int len) {
         if(len <= 1) return;
-        len--;
         for(int i = 0; i < (len/2); i++) {
-            memswap(&arr[i], &arr[len-i]);
+            memswap(&arr[i], &arr[len-i-1]);
         }
     }
 
