@@ -1,5 +1,5 @@
 # quicksort.hpp
-## One-header library with simple but overwhelmingly fast sorting method
+## One-header library with simple but fast sorting method
 > **You can look into *quicksort_example.cpp* to see example of usage**
 <br>
 
