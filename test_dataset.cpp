@@ -1,7 +1,9 @@
 #include <iostream>
 #include <chrono>
-#include "test/arrdump.hpp"
+
 #include "quicksort.hpp"
+
+#include "utils/arrdump.hpp"
 
 template <typename T>
 bool run_test(T *data, unsigned int len) {

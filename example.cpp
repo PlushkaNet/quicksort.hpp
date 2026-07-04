@@ -1,7 +1,7 @@
 #include <iostream>
 #include "quicksort.hpp"
 
-#include "test/pretty_utils.hpp"
+#include "utils/pretty_utils.hpp"
 
 int main() {
     const unsigned int ARR_LEN = 5;
