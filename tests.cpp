@@ -5,14 +5,7 @@
 
 #include "quicksort.hpp"
 
-template <typename T>
-T *generate_large_data(int len, std::function<T(void)> rng) {
-    T *arr = new T[len];
-    for(int i = 0; i < len; i++) {
-        arr[i] = rng();
-    }
-    return arr;
-}
+#include "test/pretty_utils.hpp"
 
 template <typename T>
 bool run_test_only(T *data, int len) {
