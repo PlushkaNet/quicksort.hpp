@@ -19,7 +19,7 @@ example-debug:
 	${COMPILE_DEBUG} example.cpp -o example-debug
 
 tests:
-	${COMPILE} tests.cpp -o tests
+	${COMPILE} test/tests.cpp -o tests
 
 tests-debug:
-	${COMPILE_DEBUG} tests.cpp -o tests-debug
+	${COMPILE_DEBUG} test/tests.cpp -o tests-debug
