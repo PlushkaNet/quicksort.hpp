@@ -3,9 +3,9 @@
 #include <iostream>
 #include <chrono>
 
-#include "quicksort.hpp"
+#include "../quicksort.hpp"
 
-#include "utils/pretty_utils.hpp"
+#include "../utils/pretty_utils.hpp"
 
 template <typename T>
 bool run_test_only(T *data, int len) {
